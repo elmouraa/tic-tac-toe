@@ -1,4 +1,6 @@
-![Screenshot of the Tic Tac Toe website](/video.gif "Tic Tac Toe app video")
+<p align="center">
+    <img src="./video.gif"/>
+</p>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9f1cf896-a853-4f65-b3bb-80934cbf5f52/deploy-status)](https://app.netlify.com/sites/elmouraa-tic-tac-toe/deploys)
 [![Website https://elmouraa-tic-tac-toe.netlify.app/](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://elmouraa-tic-tac-toe.netlify.app/)
