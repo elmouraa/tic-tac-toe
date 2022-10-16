@@ -5,7 +5,7 @@ export const useTicTacToe = () => {
   const [board, setBoard] = useState(initialBoard);
   const [player, setPlayer] = useState<Player>("X");
   const [winner, setWinner] = useState<Player | undefined>(undefined);
-  const [isRunning, setIsRunning] = useState(true);
+  const [isGameOver, setIsGameOver] = useState(false);
 
   const setBoardCellStatus = (index: number) => {
     const nextBoard = [...board];
@@ -21,7 +21,7 @@ export const useTicTacToe = () => {
       winner ||
       nextBoard.filter((cellStatus) => cellStatus !== undefined).length >= 9
     ) {
-      setIsRunning(false);
+      setIsGameOver(true);
     }
   };
 
@@ -29,8 +29,8 @@ export const useTicTacToe = () => {
     setBoard(initialBoard);
     setPlayer("X");
     setWinner(undefined);
-    setIsRunning(true);
+    setIsGameOver(false);
   };
 
-  return { winner, player, isRunning, board, setBoardCellStatus, reset };
+  return { winner, player, isGameOver, board, setBoardCellStatus, reset };
 };

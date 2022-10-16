@@ -1,5 +1,5 @@
 import { Cell } from "./Cell";
-import { CellStatus, Player } from "./utils";
+import { CellStatus } from "./utils";
 
 interface BoardProps {
   board: CellStatus[];

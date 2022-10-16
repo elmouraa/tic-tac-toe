@@ -1,36 +1,24 @@
 import clsx from "clsx";
 import { Board } from "./Board";
+import { Button } from "./Button";
 import { useTicTacToe } from "./use-tic-tac-toe";
+import { Winner } from "./Winner";
 
 export const TicTacToe = () => {
-  const { board, setBoardCellStatus, winner, reset, isRunning } =
+  const { board, setBoardCellStatus, winner, reset, isGameOver } =
     useTicTacToe();
 
   return (
     <div className="flex flex-col items-center justify-center space-y-6">
-      <p
-        className={clsx("text-white text-xl", {
-          "opacity-0": isRunning,
-        })}
-      >
-        {winner ? `Player ${winner} wins!` : "It's a draw!"}
-      </p>
+      <Winner winner={winner} isGameOver={isGameOver} />
       <Board
         board={board}
         setBoardCellStatus={setBoardCellStatus}
-        disabled={!isRunning}
+        disabled={isGameOver}
       />
-      <button
-        className={clsx(
-          "bg-blue-500 px-4 py-2 text-white rounded hover:bg-blue-400",
-          {
-            "opacity-0": isRunning,
-          }
-        )}
-        onClick={reset}
-      >
+      <Button className={clsx({ "opacity-0": !isGameOver })} onClick={reset}>
         Replay
-      </button>
+      </Button>
     </div>
   );
 };
